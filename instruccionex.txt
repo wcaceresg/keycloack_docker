@@ -1,0 +1,38 @@
+Resumen simple de la instalación (VPS + SSL + Docker):
+
+Subiste tu proyecto a la VPS (Contabo) y revisaste que el docker-compose.yml levantara Keycloak.
+Arreglaste el problema de Docker Compose del VPS:
+Convertiste valores de environment como true/false a strings con comillas cuando el Compose del servidor era más estricto.
+Levantaste Keycloak y PostgreSQL con Docker Compose:
+postgres guarda los datos (persisten por volumen).
+keycloak corre en el contenedor con un command de desarrollo para que inicialice.
+Hiciste la configuración de Nginx como reverse proxy:
+Creaste el archivo identidad.odenaged.pe en /etc/nginx/sites-available/.
+Nginx recibe el tráfico del dominio y lo reenvía a Keycloak (internamente por 8081).
+Registraste DNS en Yachay:
+Creaste el registro A para identidad.odenaged.pe apuntando a la IP pública del VPS (38.242.250.42).
+Generaste el certificado SSL con Certbot:
+Ejecutaste certbot --nginx -d identidad.odenaged.pe y Certbot instaló el https automáticamente.
+Corregiste el “Mixed Content” (HTTP dentro de HTTPS):
+Ajustaste la configuración de Keycloak detrás del proxy con KC_HOSTNAME, KC_PROXY y variables relacionadas.
+Con eso, Keycloak dejó de generar recursos por http y el navegador ya carga correctamente el admin console en https.
+Verificaste que queda permanente:
+Las configuraciones y contraseñas quedan guardadas porque se almacenan en PostgreSQL (tu volumen postgres_data).
+Si quieres, te dejo también los comandos “de uso diario” (reiniciar Keycloak, reiniciar todo sin borrar datos y reiniciar todo desde cero) en una mini lista.
+
+
+Reiniciar SIN perder cambios (comandos)
+Mientras NO borres el volumen postgres_data, todo lo que hayas configurado en Keycloak se mantiene.
+
+Opciones:
+
+Reiniciar solo Keycloak:
+docker-compose restart keycloak
+Bajar y subir aplicando cambios de config sin borrar datos:
+docker-compose down
+docker-compose up -d
+(Equivalentes con Compose v2, por si tu sistema usa esa sintaxis:)
+
+docker compose restart keycloak
+docker compose down
+docker compose up -d

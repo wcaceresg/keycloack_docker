@@ -79,8 +79,8 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-  width: 100%;
-  padding: 0.75rem 1rem;
+  width: 90%;
+  padding: 0rem 1rem;
   border: 2px solid var(--border-color);
   border-radius: 8px;
   font-size: 1rem;
@@ -99,18 +99,19 @@ input[type="email"]:focus {
 
 /* Botón de login */
 #kc-login {
-  width: 100%;
-  padding: 0.875rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  font-family: "GothamRounded-Medium";
+  font-size: 18px;
+  font-weight: 400;
+  display: block;
+  align-items: center;
+  background-color: #f33a4d !important;
   color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
-  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+  height: 45px;
+  border: 0px;
+  border-radius: 6px;
+  justify-content: center;
+  box-shadow: 0px 6px #b62b3a !important;
+  width: 100% !important;
 }
 
 #kc-login:hover {
@@ -261,12 +262,7 @@ input[type="radio"] {
   text-align: center;
 }
 
-.registration-link {
-  color: #00043c;
-  font-weight: 600;
-  text-decoration: underline;
-  transition: opacity 0.3s ease;
-}
+
 
 .registration-link:hover {
   opacity: 0.8;
@@ -290,4 +286,24 @@ input[type="radio"] {
  .login-pf body {
     background: url(../img/perueduca-bg.jpeg);
     background-size: auto;
+}
+
+h1{
+  color: #237EF2 !important;
+}
+a {
+  color: #0088ce;
+  text-decoration: none;
+}
+
+.pf-c-form-control {
+  font-family: "GothamRounded-Medium";
+  font-size: 1rem !important;
+  border: 1px solid #237ef2 !important;
+  background: #ffffff !important;
+  height: 52px !important;
+  color: #2f3b55;
+  border-radius: 5px;
+  padding: 4px 8px 4px 8px;
+  margin-bottom: 15px;
 }

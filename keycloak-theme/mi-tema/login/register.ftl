@@ -1,6 +1,6 @@
 <#import "template.ftl" as layout>
 
-<@layout.registrationLayout displayInfo=false displayMessage=true; section>
+<@layout.registrationLayout displayInfo=false displayMessage=true title="Registrarse"; section>
 
 <#if section = "form">
 <form id="kc-register-form"
@@ -14,6 +14,7 @@
                id="email"
                name="email"
                value="${(register.formData.email!'')}"
+               class="pf-c-form-control"
                required />
     </div>
 
@@ -23,6 +24,7 @@
         <input type="password"
                id="password"
                name="password"
+               class="pf-c-form-control"
                required />
     </div>
 
@@ -32,11 +34,12 @@
         <input type="password"
                id="password-confirm"
                name="password-confirm"
+               class="pf-c-form-control"
                required />
     </div>
 
     <div class="${properties.kcFormGroupClass!}">
-        <button type="submit">Registrarse</button>
+        <button type="submit" class="pf-c-button pf-m-primary">Registrarse</button>
     </div>
 
 </form>

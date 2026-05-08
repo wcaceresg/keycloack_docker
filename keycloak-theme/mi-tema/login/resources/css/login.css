@@ -57,6 +57,7 @@ p.instruction {
 h1#kc-page-title {
     margin-top: 20px;
     overflow-wrap: anywhere;
+    color: #237EF2 !important;
 }
 
 #kc-locale ul {
@@ -370,6 +371,24 @@ ul#kc-totp-supported-apps {
     border-color: transparent black transparent transparent;
 }
 
+
+.pf-m-primary {
+    font-family: "GothamRounded-Medium";
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+    align-items: center;
+    background-color: #f33a4d !important;
+    color: #ffffff;
+    height: 45px;
+    border: 0px;
+    border-radius: 6px;
+    justify-content: center;
+    box-shadow: 0px 6px #b62b3a !important;
+    width: 100% !important;
+}
+
+
 @media (min-width: 768px) {
     #kc-container-wrapper {
         position: absolute;
@@ -535,7 +554,7 @@ ul#kc-totp-supported-apps {
 .card-pf {
     background: #fff;
     margin: 0 auto;
-    padding: 0 20px;
+   /* padding: 0 20px;*/
     max-width: 400px;
     border-top: 0;
     /* min-height: 600px; */
@@ -643,3 +662,17 @@ ul#kc-totp-supported-apps {
     margin-bottom: 16px;
 }
 /* End Recovery codes */
+
+
+h1{
+    color: #237EF2 !important;
+}
+
+#form-input-login {
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    margin-left: -15px;
+    margin-top: -15px;
+    margin-right: -15px;
+}
